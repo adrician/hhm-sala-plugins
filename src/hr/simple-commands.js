@@ -339,10 +339,10 @@ room.onCommand_pm = {
       return false;
     }
 
-    room.onCommand_classic = {
+  room.onCommand_classic = {
       function: (player) => {
         if (player.admin) {
-          setCustomStadium(strongClassic);
+          room.setCustomStadium(strongClassic);
         } else {
           room.sendAnnouncement(
             "You need admin to use this command!",
@@ -361,7 +361,7 @@ room.onCommand_pm = {
     room.onCommand_big = {
       function: (player) => {
         if (player.admin) {
-          setCustomStadium(strongBig);
+          room.setCustomStadium(strongBig);
         } else {
           room.sendAnnouncement(
             "You need admin to use this command!",

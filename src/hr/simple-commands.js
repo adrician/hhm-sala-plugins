@@ -41,12 +41,6 @@ room.onCommand_pm = {
       return false;
     }
 
-    room.onCommand_big = {
-      function: (player) => {
-        if (player.admin) {
-          room.setCustomStadium(strongBig);
-};
-
     const mutePlugin = room.getPlugin("hr/mute");
     if (mutePlugin && mutePlugin.isMuted(fromPlayer)) {
       return false;
@@ -176,6 +170,12 @@ room.onGameStop = function () {
     swapTeams(stoppedByRrs);
     room.startGame();
     stoppedByRrs = null;
+  }
+};
+
+room.onCommand_big = function () {
+  if (player.admin) {
+    room.setCustomStadium(strongBig);
   }
 };
 

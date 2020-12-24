@@ -49,7 +49,7 @@ room.pluginSpec = {
   name: `hr/maps`,
   author: `salamini`,
   version: `1.0.0`,
-  dependencies: [`hr/simple-commands`],
+  dependencies: [`sav/commands`],
   incompatible_with: [`tut/maps`],
   config: {
     maps: {}

@@ -12,7 +12,7 @@ function isGameRunning() {
   return !!room.getScores();
 }
 
-var strongClassic = {
+var strongClassic = `{
 
 	"name" : "Strongball Classic",
 
@@ -162,9 +162,9 @@ var strongClassic = {
 		"bCoef" : 0
 
 	}
-}
+}`
 
-var strongBig = {
+var strongBig = `{
 	"name" : "Big",
 
 	"width" : 600,
@@ -309,7 +309,7 @@ var strongBig = {
 		"bCoef" : 0
 
 	}
-}
+}`
 room.pluginSpec = {
   name: `hr/simple-commands`,
   author: `salamini`,

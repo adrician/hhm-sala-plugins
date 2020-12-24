@@ -69,7 +69,7 @@ const DEFAULT_MAPS = [
   'Huge'
 ];
 
-room.onCommand_maps = {
+room.onCommand_maps= room.onCommand_Maps {
   function: player => {
     if (!isAdmin(player)) return;
     displayMaps(player.id);
@@ -81,7 +81,7 @@ room.onCommand_maps = {
   }
 };
 
-room.onCommand_setMap = {
+room.onCommand_setmap = room.onCommand_setMap {
   function: (player, args) => {
     if (!isAdmin(player)) return;
     let mapName = args.join(' ');

@@ -3,7 +3,7 @@
  * with a public room.
  *
  * Some code copied from XHerna's plugin.
- * See original at https://github.com/XHerna/hhm-plugins/blob/master/hr/tut/simple-commands.js.
+ * See original at https://github.com/XHerna/hhm-plugins/blob/master/src/tut/simple-commands.js.
  */
 
 const room = HBInit();
@@ -16,7 +16,7 @@ room.pluginSpec = {
   name: `hr/simple-commands`,
   author: `salamini`,
   version: `1.1.1`,
-  dependencies: [`hr/commands`, `hr/players`],
+  dependencies: [`sav/commands`, `sav/players`],
 };
 
 room.onCommand_bb = {
@@ -24,7 +24,7 @@ room.onCommand_bb = {
     room.kickPlayer(player.id, "Good Bye!", false);
   },
   data: {
-    'hr/help': {
+    'sav/help': {
       text: ' (leave the room)',
     }
   }
@@ -91,7 +91,7 @@ room.onCommand_pm = {
     return false;
   },
   data: {
-    'hr/help': {
+    'sav/help': {
       text: ' #PLAYER_ID (send a private message to another player)',
     }
   }
@@ -110,7 +110,7 @@ room.onCommand_swap = {
     }
   },
   data: {
-    'hr/help': {
+    'sav/help': {
       text: ' (swap teams if you have admin)',
     }
   }
@@ -129,7 +129,7 @@ room.onCommand_rr = {
     }
   },
   data: {
-    'hr/help': {
+    'sav/help': {
       text: ' (restart game if you have admin)',
     }
   }
@@ -159,7 +159,7 @@ room.onCommand_rrs = {
     }
   },
   data: {
-    'hr/help': {
+    'sav/help': {
       text: ' (restart game and swap teams if you have admin)',
     }
   }
@@ -170,12 +170,6 @@ room.onGameStop = function () {
     swapTeams(stoppedByRrs);
     room.startGame();
     stoppedByRrs = null;
-  }
-};
-
-room.onCommand_big = function () {
-  if (player.admin) {
-    room.setCustomStadium(strongBig);
   }
 };
 

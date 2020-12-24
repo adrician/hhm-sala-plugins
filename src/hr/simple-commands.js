@@ -19,7 +19,7 @@ room.pluginSpec = {
   dependencies: [`sav/commands`, `sav/players`],
 };
 
-room.onCommand_bb = {
+room.onCommand_bb = room.onCommand_BB {
   function: (player) => {
     room.kickPlayer(player.id, "Good Bye!", false);
   },
@@ -30,7 +30,7 @@ room.onCommand_bb = {
   }
 }
 
-room.onCommand_pm = {
+room.onCommand_pm = room.onCommand_PM {
   function: (fromPlayer, args) => {
     if (!Array.isArray(args) || args.length < 2) {
       room.sendAnnouncement(
@@ -97,7 +97,7 @@ room.onCommand_pm = {
   }
 }
 
-room.onCommand_swap = {
+room.onCommand_swap = room.onCommand_Swap{
   function: (player) => {
     if (player.admin) {
       swapTeams(player);
@@ -116,7 +116,7 @@ room.onCommand_swap = {
   }
 }
 
-room.onCommand_rr = {
+room.onCommand_rr = room.onCommand_RR{
   function: (player) => {
     if (player.admin) {
       restartGame();
@@ -139,7 +139,7 @@ room.onCommand_rr = {
 // so it should swap teams and restart.
 let stoppedByRrs = null;
 
-room.onCommand_rrs = {
+room.onCommand_rrs = room.onCommand_RRS{
   function: (player) => {
     if (!player.admin) {
       room.sendAnnouncement(

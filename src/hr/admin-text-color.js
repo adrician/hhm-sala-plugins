@@ -1,7 +1,7 @@
 let room = HBInit();
 room.pluginSpec = {
-	name: 'hk/admin-text-color',
-	author: `hk`,
+	name: 'hr/admin-text-color',
+	author: `hr`,
 	version: `1.0.0`,
 	config: {
 		adminpass: ""

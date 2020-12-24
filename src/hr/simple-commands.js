@@ -45,20 +45,7 @@ room.onCommand_pm = {
       function: (player) => {
         if (player.admin) {
           room.setCustomStadium(strongBig);
-        } else {
-          room.sendAnnouncement(
-            "You need admin to use this command!",
-            player.id,
-            0xff0000
-          );
-        }
-      },
-      data: {
-        'hr/help': {
-          text: ' (Switches to big map (Requires Administrator)',
-        }
-      }
-    }
+};
 
     const mutePlugin = room.getPlugin("hr/mute");
     if (mutePlugin && mutePlugin.isMuted(fromPlayer)) {

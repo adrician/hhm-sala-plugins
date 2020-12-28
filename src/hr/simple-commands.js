@@ -182,9 +182,9 @@ function swapTeams(player) {
   if (!isGameRunning()) {
     players = room.getPlayerList();
     for (i = 0; i < players.length; i++) {
-      if (players[i].team == 1) {
+      if (players[i].team === 1) {
         room.setPlayerTeam(players[i].id, 2);
-      } else if (players[i].team == 2) {
+      } else if (players[i].team === 2) {
         room.setPlayerTeam(players[i].id, 1);
       }
     }

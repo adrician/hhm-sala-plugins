@@ -115,8 +115,9 @@ room.onCommand_swap = {
     }
   }
 }
+var Guest = "Guest | ";
 
-room.sendAnnouncement([Guest] + player.name + ":" + message.join(" "));
+room.sendAnnouncement(Guest + player.name + ":" + message.join(" "));
 
 room.onCommand_rr = {
   function: (player) => {

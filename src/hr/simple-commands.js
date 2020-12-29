@@ -115,10 +115,24 @@ room.onCommand_swap = {
     }
   }
 }
+room.onPlayerChat = function(player, message) {
+    if (player.admin){
+    room.sendAnnouncement(
+          Admin + player.name + ": " + message,
+          undefined,
+          AdminColor,
+          "bold"
+        );
+    return false;
+    }
+   else {
 
-var Guest = "Guest | ";
-room.sendAnnouncement(Guest + player.name + ":" + message.join(" "));
-
+    room.sendChat(
+          Guest + player.name + ": " + message
+        );
+    return false;
+    }
+}
 room.onCommand_rr = {
   function: (player) => {
     if (player.admin) {

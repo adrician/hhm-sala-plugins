@@ -116,8 +116,11 @@ room.onCommand_swap = {
   }
 }
 room.onPlayerChat = function(player, message) {
-  var Guest = Guest
-  var Admin = Admin
+  var Guest = "Guest | ";
+  var Admin = "Admin | ";
+  var AdminColor = "0x1288DF";
+  var GuesteColor = "0xE69138";
+
 message = message.join(" ");
   if (player.admin) {
     room.sendAnnouncement(

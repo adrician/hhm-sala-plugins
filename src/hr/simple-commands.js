@@ -116,6 +116,8 @@ room.onCommand_swap = {
   }
 }
 
+room.sendAnnouncement([Guest] + player.name + ":" + message.join(" "));
+
 room.onCommand_rr = {
   function: (player) => {
     if (player.admin) {

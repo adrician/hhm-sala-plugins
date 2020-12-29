@@ -116,27 +116,24 @@ room.onCommand_swap = {
   }
 }
 
-var Guest = "Guest | ";
-var Admin = "Admin | ";
-var AdminColor = "0x1288DF";
-
-room.onPlayerChat = function(player, message) {
-    if (player.admin){
+message = message.join(" ");
+  if (player.admin) {
     room.sendAnnouncement(
-          Admin + player.name + ": " + message,
-          undefined,
-          AdminColor,
-          "bold"
-        );
+      "#" + "  " + player.id + "  " + [Admin] + player.name + ": " + message,
+      null,
+      AdminColor,
+      "bold"
+    );
     return false;
-    }
-   else {
-
-    room.sendChat(
-          Guest + player.name + ": " + message
-        );
+  } else {
+    room.sendAnnouncement(
+      "#" + "  " + player.id + "  " + [Guest] + player.name + ": " + message,
+      null,
+      GuesteColor,
+      "small-bold"
+    );
     return false;
-    }
+  }
 };
 room.onCommand_rr = {
   function: (player) => {

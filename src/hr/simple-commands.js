@@ -115,7 +115,9 @@ room.onCommand_swap = {
     }
   }
 }
-
+room.onPlayerChat = function(player, message) {
+  var Guest = Guest
+  var Admin = Admin
 message = message.join(" ");
   if (player.admin) {
     room.sendAnnouncement(
